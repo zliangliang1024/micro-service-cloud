@@ -1,0 +1,5 @@
+com\yao0er4\springcloud\config\ApplicationContextConfig.class
+com\yao0er4\springcloud\ConsumerOrder80.class
+com\yao0er4\springcloud\controller\OrderController.class
+com\yao0er4\springcloud\entities\CommonResult.class
+com\yao0er4\springcloud\entities\PaymentEntity.class
