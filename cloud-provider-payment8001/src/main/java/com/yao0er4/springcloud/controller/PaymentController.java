@@ -5,11 +5,9 @@ import com.yao0er4.springcloud.entities.PaymentEntity;
 import com.yao0er4.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @RestController
 @RequestMapping("/payment")
@@ -40,5 +38,10 @@ public class PaymentController {
             return new CommonResult<>(200, "查询成功，服务端口：" + serverPort, paymentById);
         }
         return new CommonResult<>(400, "查询失败，id-[" + id + "]不存在", null);
+    }
+
+    @GetMapping(value = "/lb")
+    public int getPaymentLB() {
+        return serverPort;
     }
 }
