@@ -44,4 +44,16 @@ public class PaymentController {
     public int getPaymentLB() {
         return serverPort;
     }
+
+    @GetMapping(value = "/feign/timeout-test")
+    public int timeoutTest() {
+        try {
+            System.out.println("*** PaymentFeignTimeout from port:" + serverPort);
+            // 暂停3秒再返回
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
+    }
 }
