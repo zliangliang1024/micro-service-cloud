@@ -11,13 +11,26 @@ spring:
           uri: https://github.com/zliangliang1024/spring-cloud-config-center.git # git 仓库名字
           search-paths:
             - spring-cloud-config-center # 搜索目录
-#          force-pull: true
+          force-pull: true
           skip-ssl-validation: true # 使 连接 github 更快些
 #          basedir:
 #          default-label: master
+
+  # rabbitmq 配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: yao0er4
+    password: admin
 
 # 服务注册到 eureka 地址
 eureka:
   client:
     service-url:
       defaultZone: http://eureka7001.com:eureka/eureka,http://eureka7002.com:7002/eureka
+
+management:
+  endpoints: # 暴露 bus 刷新配置断点
+    web:
+      exposure:
+        include: "bus-refresh"
