@@ -1,0 +1,15 @@
+server:
+  port: 85
+
+spring:
+  application:
+    name: nacos-consumer-order
+  cloud:
+    nacos:
+      discovery:
+        # Client not connected,current status:STARTING 问题解决：https://nacos.io/zh-cn/docs/2.0.0-compatibility.html
+        server-addr: localhost:8848
+
+# 消费者将要访问的微服务名称（成功注册进nacos的微服务提供者）
+service-url:
+  nacos-user-service: http://nacos-payment-provider

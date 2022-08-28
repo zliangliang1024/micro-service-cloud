@@ -1,0 +1,20 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: nacos-payment-provider
+  cloud:
+    nacos:
+      discovery:
+        # Nacos2.0的服务端完全兼容1.X客户端。Nacos2.0客户端由于使用了gRPC，
+        # 无法兼容Nacos1.X服务端，请勿使用2.0以上版本客户端连接Nacos1.X服务端。
+        #
+#        server-addr: localhost:8848 # 配置 nacos 配置地址
+        # https://www.jianshu.com/p/0f7ffda528f3  2.x 版本需要增加地址偏移转发映射
+        server-addr: 172.21.232.211:2222 # 配置 nacos 配置地址
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
